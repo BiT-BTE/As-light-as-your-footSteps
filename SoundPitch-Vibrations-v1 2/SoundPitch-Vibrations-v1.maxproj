@@ -2,8 +2,8 @@
 	"name" : "SoundPitch-Vibrations-v1",
 	"version" : 1,
 	"creationdate" : 3735212725,
-	"modificationdate" : 3735212727,
-	"viewrect" : [ 0.0, 0.0, 300.0, 500.0 ],
+	"modificationdate" : 3735286313,
+	"viewrect" : [ 25.0, 119.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
 	"showdependencies" : 1,
@@ -15,14 +15,20 @@
 				"local" : 1,
 				"toplevel" : 1
 			}
+,
+			"accelerometer_MEDIUM.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"Arduino trigger.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
 
 		}
 ,
-		"externals" : 		{
-
-		}
-,
-		"other" : 		{
+		"code" : 		{
 
 		}
 
