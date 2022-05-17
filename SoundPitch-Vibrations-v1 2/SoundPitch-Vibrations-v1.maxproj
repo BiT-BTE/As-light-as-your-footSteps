@@ -2,7 +2,7 @@
 	"name" : "SoundPitch-Vibrations-v1",
 	"version" : 1,
 	"creationdate" : 3735212725,
-	"modificationdate" : 3735286313,
+	"modificationdate" : 3735555900,
 	"viewrect" : [ 25.0, 119.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -23,6 +23,39 @@
 ,
 			"Arduino trigger.maxpat" : 			{
 				"kind" : "patcher",
+				"local" : 1
+			}
+
+		}
+,
+		"media" : 		{
+			"ascending.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"beep_250ms.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"constant.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"descending.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"A4-long.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"splash1.aif" : 			{
+				"kind" : "audiofile",
 				"local" : 1
 			}
 
