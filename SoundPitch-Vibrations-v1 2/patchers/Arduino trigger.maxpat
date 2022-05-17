@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 100.0, 962.0, 792.0 ],
+		"rect" : [ 34.0, 100.0, 1277.0, 789.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -171,8 +171,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 164.262196779251099, 179.0, 523.0, 22.0 ],
-									"text" : "append ascending.wav, append beep_250ms.wav, append constant.wav, append descending.wa"
+									"patching_rect" : [ 169.262196779251099, 179.0, 529.0, 22.0 ],
+									"text" : "append ascending.wav, append beep_250ms.wav, append constant.wav, append descending.wav"
 								}
 
 							}
@@ -340,7 +340,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 796.75, 447.666687000000024, 90.0, 22.0 ],
-					"text" : "loadmess 5000"
+					"text" : "loadmess 3000"
 				}
 
 			}
@@ -716,20 +716,6 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
-					"id" : "obj-12",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 869.0, 453.691467000000102, 130.0, 23.0 ],
-					"text" : "read mediumN4.wav"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 13.0,
 					"id" : "obj-13",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -911,8 +897,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 670.75, 285.5, 38.0, 23.0 ],
-					"text" : "> 50."
+					"patching_rect" : [ 670.75, 285.5, 31.0, 23.0 ],
+					"text" : "> 5."
 				}
 
 			}
