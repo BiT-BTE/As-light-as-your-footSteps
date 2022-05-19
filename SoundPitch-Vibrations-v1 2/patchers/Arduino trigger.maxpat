@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 100.0, 1277.0, 789.0 ],
+		"rect" : [ 34.0, 100.0, 1444.0, 799.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -308,7 +308,7 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-41",
-					"items" : [ "ascending.wav", ",", "beep_250ms.wav", ",", "constant.wav", ",", "descending.wa" ],
+					"items" : [ "ascending.wav", ",", "beep_250ms.wav", ",", "constant.wav", ",", "descending.wav" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -340,7 +340,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 796.75, 447.666687000000024, 90.0, 22.0 ],
-					"text" : "loadmess 3000"
+					"text" : "loadmess 2000"
 				}
 
 			}
@@ -815,7 +815,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 647.25, 585.691467000000102, 32.5, 23.0 ],
+					"patching_rect" : [ 647.25, 585.691467000000102, 29.5, 23.0 ],
 					"text" : "5"
 				}
 
@@ -897,8 +897,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 670.75, 285.5, 31.0, 23.0 ],
-					"text" : "> 5."
+					"patching_rect" : [ 670.75, 285.5, 38.0, 23.0 ],
+					"text" : "> 10."
 				}
 
 			}
