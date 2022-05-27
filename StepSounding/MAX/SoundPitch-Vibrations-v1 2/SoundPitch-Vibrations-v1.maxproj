@@ -2,7 +2,7 @@
 	"name" : "SoundPitch-Vibrations-v1",
 	"version" : 1,
 	"creationdate" : 3735212725,
-	"modificationdate" : 3735555900,
+	"modificationdate" : 3736489625,
 	"viewrect" : [ 25.0, 119.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -22,6 +22,11 @@
 			}
 ,
 			"Arduino trigger.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"Max envia a ESP32.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}
