@@ -1,0 +1,152 @@
+#N canvas 0 38 1512 861 10;
+#X text 35 32 Hello world!;
+#X text 35 42 ============;
+#X text 215 22 ............................;
+#X text 215 32 . ____ ._____ _ .......___ .;
+#X text 215 42 .| __ )| ____| |....../ _ |.;
+#X text 215 62 .| |_) | |___| |___ / ___ |.;
+#X text 215 72 .|____/|_____|_____/_/..._|.io;
+#X text 215 82 ............................;
+#X text 215 52 .| __ || __|.| |...../ _| |.;
+#X obj 49 204 adc~ 1 2;
+#X obj 45 707 dac~ 1 2;
+#X floatatom 114 236 5 0 5 0 - - - 0;
+#X obj 116 189 hsl 128 15 0 2 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 162 127 loadbang;
+#X obj 53 387 *~ 1;
+#X text 464 48 y(n) = ff1 * w(n) + ff2 * w(n-1) + ff3 * w(n-2);
+#X text 464 65 w(n) = x(n) + fb1 * w(n-1) + fb2 * w(n-2);
+#X text 463 25 Biquad~ calculates the following difference equation:
+;
+#X msg 34 144 \; pd dsp \$1;
+#X obj 34 119 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X text 57 118 DSP on/off;
+#X obj 126 761 dac~ 27 28 29 30;
+#X text 136 794 Plotter;
+#X text 57 739 Salidas;
+#X msg 221 352 clear;
+#X text 262 416 this biquad~ is a notch filter for;
+#X text 258 433 fn = Pi/4 (= SR/8 = 5512.5Hz @44.1k);
+#X text 269 352 or clear memory (same as 'set 0 0').;
+#X obj 206 421 env~;
+#X floatatom 206 457 5 0 0 0 - - - 0;
+#X obj 187 390 biquad~;
+#X text 154 288 Lowpass Fc: 500 \, Q: 0.5 \, Gain: 12 \, SR: 44100
+;
+#X obj 395 733 metro 100;
+#X obj 396 695 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 322 761 tabwrite~ signal;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array signal 100 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0;
+#X coords 0 1 100 -1 200 140 1;
+#X restore 583 629 graph;
+#X text 482 211 comment;
+#X msg 657 360 clear;
+#X text 698 424 this biquad~ is a notch filter for;
+#X text 694 441 fn = Pi/4 (= SR/8 = 5512.5Hz @44.1k);
+#X text 705 360 or clear memory (same as 'set 0 0').;
+#X obj 642 429 env~;
+#X floatatom 642 465 5 0 0 0 - - - 0;
+#X obj 623 398 biquad~;
+#X text 590 296 Lowpass Fc: 500 \, Q: 0.5 \, Gain: 12 \, SR: 44100
+;
+#X msg 627 322 0.9746 -0.3313 0.6979 0.123 -0.8046, f 60;
+#X msg 1080 367 clear;
+#X text 1121 431 this biquad~ is a notch filter for;
+#X text 1117 448 fn = Pi/4 (= SR/8 = 5512.5Hz @44.1k);
+#X text 1128 367 or clear memory (same as 'set 0 0').;
+#X obj 1065 436 env~;
+#X floatatom 1065 472 5 0 0 0 - - - 0;
+#X obj 1046 405 biquad~;
+#X text 1013 303 Lowpass Fc: 500 \, Q: 0.5 \, Gain: 12 \, SR: 44100
+;
+#X msg 1050 329 0.4299 -0.3816 0.4058 0.6759 -0.6123, f 60;
+#X msg 1105 598 clear;
+#X text 1146 662 this biquad~ is a notch filter for;
+#X text 1142 679 fn = Pi/4 (= SR/8 = 5512.5Hz @44.1k);
+#X text 1153 598 or clear memory (same as 'set 0 0').;
+#X obj 1090 667 env~;
+#X floatatom 1090 703 5 0 0 0 - - - 0;
+#X obj 1071 636 biquad~;
+#X text 1038 534 Lowpass Fc: 500 \, Q: 0.5 \, Gain: 12 \, SR: 44100
+;
+#X msg 1075 560 0.4299 -0.3816 0.4058 0.6759 -0.6123, f 60;
+#X msg 1106 764 clear;
+#X text 1147 828 this biquad~ is a notch filter for;
+#X text 1143 845 fn = Pi/4 (= SR/8 = 5512.5Hz @44.1k);
+#X text 1154 764 or clear memory (same as 'set 0 0').;
+#X obj 1091 833 env~;
+#X floatatom 1091 869 5 0 0 0 - - - 0;
+#X obj 1072 802 biquad~;
+#X text 1168 608 Lowpass Fc: 500 \, Q: 0.5 \, Gain: 12 \, SR: 44100
+;
+#X msg 1076 726 0.4299 -0.3816 0.4058 0.6759 -0.6123, f 60;
+#X msg 1121 954 clear;
+#X text 1162 1018 this biquad~ is a notch filter for;
+#X text 1158 1035 fn = Pi/4 (= SR/8 = 5512.5Hz @44.1k);
+#X text 1169 954 or clear memory (same as 'set 0 0').;
+#X obj 1106 1023 env~;
+#X floatatom 1106 1059 5 0 0 0 - - - 0;
+#X obj 1087 992 biquad~;
+#X text 1054 890 Lowpass Fc: 500 \, Q: 0.5 \, Gain: 12 \, SR: 44100
+;
+#X msg 1091 916 0.4299 -0.3816 0.4058 0.6759 -0.6123, f 60;
+#X text 462 92 The filter's coefficients syntax (set via arguments
+or list input) is: fb1 fb2 ff1 ff2 ff3 El equivalente de esto en la
+notación convenconal es: ff = a y fb = b Entonces la disposición
+de los coheficientes queda así: b1 \, b2 \, a1 \, a2 \, a3 y en la
+notacion convencional sería a0 a1 b0 b1 b2, f 54;
+#X msg 191 314 1.195 -0.8773 0.6261 0.835 0.8313;
+#X msg 162 158 5;
+#X connect 9 0 14 0;
+#X connect 9 1 14 0;
+#X connect 11 0 14 1;
+#X connect 12 0 11 0;
+#X connect 13 0 84 0;
+#X connect 13 0 45 0;
+#X connect 13 0 54 0;
+#X connect 13 0 72 0;
+#X connect 13 0 81 0;
+#X connect 13 0 83 0;
+#X connect 13 0 63 0;
+#X connect 14 0 10 0;
+#X connect 14 0 10 1;
+#X connect 19 0 18 0;
+#X connect 24 0 30 0;
+#X connect 28 0 29 0;
+#X connect 30 0 28 0;
+#X connect 30 0 43 0;
+#X connect 32 0 34 0;
+#X connect 33 0 32 0;
+#X connect 37 0 43 0;
+#X connect 41 0 42 0;
+#X connect 43 0 41 0;
+#X connect 43 0 52 0;
+#X connect 45 0 43 0;
+#X connect 46 0 52 0;
+#X connect 50 0 51 0;
+#X connect 52 0 50 0;
+#X connect 54 0 52 0;
+#X connect 55 0 61 0;
+#X connect 59 0 60 0;
+#X connect 61 0 59 0;
+#X connect 61 0 70 0;
+#X connect 63 0 61 0;
+#X connect 64 0 70 0;
+#X connect 68 0 69 0;
+#X connect 70 0 68 0;
+#X connect 70 0 79 0;
+#X connect 72 0 70 0;
+#X connect 73 0 79 0;
+#X connect 77 0 78 0;
+#X connect 79 0 77 0;
+#X connect 81 0 79 0;
+#X connect 83 0 30 0;
+#X connect 84 0 11 0;

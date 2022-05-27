@@ -1,2 +1,2 @@
-# i_mBODY-Sonification
- The different projects of the i_mBODY Lab
+# BiT-Cyborg
+ My personal repository for BODYinTRANSIT

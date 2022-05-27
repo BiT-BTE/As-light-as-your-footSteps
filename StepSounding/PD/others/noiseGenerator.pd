@@ -1,0 +1,5 @@
+#N canvas 128 128 450 300 12;
+#X obj 101 192 dac~ 1 2;
+#X obj 106 69 noise~;
+#X connect 1 0 0 0;
+#X connect 1 0 0 1;
