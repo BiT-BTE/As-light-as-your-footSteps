@@ -2,7 +2,7 @@
 	"name" : "SoundPitch-Vibrations-v1",
 	"version" : 1,
 	"creationdate" : 3735212725,
-	"modificationdate" : 3736489625,
+	"modificationdate" : 3736768105,
 	"viewrect" : [ 25.0, 119.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -67,6 +67,14 @@
 		}
 ,
 		"code" : 		{
+
+		}
+,
+		"externals" : 		{
+			"orientation.mxo" : 			{
+				"kind" : "object",
+				"local" : 1
+			}
 
 		}
 
