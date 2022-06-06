@@ -1,3 +1,6 @@
+///////////////// bela filter bajo altas
+
+
 /*******************
 Hello Bela!
 Connect your headphones to the stereo audio output of the Bela and run this program.
@@ -23,7 +26,7 @@ s.waitForBoot {
 	// Your code goes here.
 (
 {
-var volum = 6;
+var volum = 0.5;
 var micros = SoundIn.ar([0], volum);
 var micros2 = SoundIn.ar([0], volum);
 
@@ -46,7 +49,7 @@ var micros2 = SoundIn.ar([0], volum);
 				), 1,-1.24009649842968,0.472880760352765,1.47390962975530,-0.750584038350420,1.18854430410996) // Septimo biquad
 			),1,-0.650250100924374,0.556478719984411,0.575592175975871,-0.377772909258127,0.885185831048128) // Octavo biquad
 		), 1,0.829269440440680,0.273963711889164,-0.535412475860895,0.177473530464306,0.645643562575238) // Noveno biquad
-	),
+	) * 2,
 	// this is the stereo part
 	(SOS.ar(
 		(SOS.ar(
@@ -67,7 +70,7 @@ var micros2 = SoundIn.ar([0], volum);
 				), 1,-1.24009649842968,0.472880760352765,1.47390962975530,-0.750584038350420,1.18854430410996) // Septimo biquad
 			),1,-0.650250100924374,0.556478719984411,0.575592175975871,-0.377772909258127,0.885185831048128) // Octavo biquad
 		), 1,0.829269440440680,0.273963711889164,-0.535412475860895,0.177473530464306,0.645643562575238) // Noveno biquad
-	)]
+	) * 2]
 }.play;
 )
 };

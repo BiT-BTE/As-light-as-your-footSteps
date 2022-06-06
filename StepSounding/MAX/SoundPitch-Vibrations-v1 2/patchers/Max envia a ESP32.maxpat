@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 550.0, 179.0, 1352.0, 480.0 ],
+		"rect" : [ 34.0, 100.0, 450.0, 792.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -45,7 +45,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 188.0, 233.0, 38.0, 22.0 ],
+					"patching_rect" : [ 169.0, 243.0, 38.0, 22.0 ],
 					"text" : "/led 1"
 				}
 
@@ -56,7 +56,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 188.0, 291.0, 171.0, 22.0 ],
+					"patching_rect" : [ 169.0, 301.0, 171.0, 22.0 ],
 					"text" : "udpsend 192.168.152.63 8888"
 				}
 
