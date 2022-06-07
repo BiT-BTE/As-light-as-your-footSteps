@@ -1,12 +1,11 @@
-////////// This is the bela filter flat
-
-
+////////// This is the bela FSM Biquad
 
 /*******************
-Hello Bela!
-Connect your headphones to the stereo audio output of the Bela and run this program.
 
-(c) 2017: Jonathan Reus, Marije Baalman, Giulio Moro, Andrew McPherson
+This patch implements three filters based on Biquad cascade of nine elements
+
+The boton in this skectch changes from one filter to another, p'assing by the flat config, to the hp-lp and finally to the lp-hp
+
 */
 
 s = Server.default;
@@ -25,9 +24,12 @@ s.options.belaMaxScopeChannels = 8;
 
 s.waitForBoot {
 	// Your code goes here.
-(
-{
+
+
+flatFilter = {
+// this was de variable for the volume, not in use for now
 var volum = 0.5;
+// those are the variables for the 2 mic channels
 var micros = SoundIn.ar([0]);
 var micros2 = SoundIn.ar([1]);
 
@@ -72,8 +74,10 @@ var micros2 = SoundIn.ar([1]);
 			), 1,-0.650250100924374,0.556478719984411,0.486977719470636,-0.165659884381527,0.748908333544837) // Octavo biquad
 		), 1,0.829269440440680,0.273963711889164,-0.535412475860895,0.177473530464306,0.645643562575238) // Noveno biquad
 	)]
-}.play;
-)
+};
+
+	flatFilter.play;
+
 };
 
 ServerQuit.add({ 0.exit }); // quit if the button is pressed

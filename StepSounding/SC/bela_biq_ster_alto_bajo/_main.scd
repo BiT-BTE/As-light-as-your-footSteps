@@ -2,10 +2,7 @@
 
 
 /*******************
-Hello Bela!
-Connect your headphones to the stereo audio output of the Bela and run this program.
 
-(c) 2017: Jonathan Reus, Marije Baalman, Giulio Moro, Andrew McPherson
 */
 
 s = Server.default;
@@ -27,8 +24,8 @@ s.waitForBoot {
 (
 {
 var volum = 0.5;
-var micros = SoundIn.ar([0], volum);
-var micros2 = SoundIn.ar([0], volum);
+var micros = SoundIn.ar([0]);
+var micros2 = SoundIn.ar([0]);
 
 	[(SOS.ar(
 		(SOS.ar(
@@ -49,7 +46,7 @@ var micros2 = SoundIn.ar([0], volum);
 				), 1,-1.47390962975530,0.750584038350421,1.24009649842968,-0.472880760352765,0.841365354696518) // Septimo biquad
 			), 1,-0.650250100924374,0.556478719984411,0.532681879146733,-0.275060177975467,0.819195380961095) // Octavo biquad
 		), 1,0.829269440440680,0.273963711889164,-0.535412475860895,0.177473530464306,0.645643562575238) // Noveno biquad
-	) * 3,
+	),
 	// this is the stereo part
 	(SOS.ar(
 		(SOS.ar(
@@ -60,7 +57,7 @@ var micros2 = SoundIn.ar([0], volum);
 							(SOS.ar(
 								(SOS.ar(
 									(SOS.ar(
-										(micros
+										(micros2
 										), 1,-1.98735055990554,0.987430621221091,1.99544167170140,-0.995522058971043,1.00407130576713)//Primer biquad
 									), 1,-1.97994747451044,0.980261513561294,1.99081896700769,-0.991134730383673,1.00549079843643) // Segundo Biquad
 								), 1,-1.95500251703539,0.956243339189606,1.98109032708820,-0.982347706936024,1.01334413118423) // Tercer biquad
@@ -70,7 +67,7 @@ var micros2 = SoundIn.ar([0], volum);
 				), 1,-1.47390962975530,0.750584038350421,1.24009649842968,-0.472880760352765,0.841365354696518) // Septimo biquad
 			), 1,-0.650250100924374,0.556478719984411,0.532681879146733,-0.275060177975467,0.819195380961095) // Octavo biquad
 		), 1,0.829269440440680,0.273963711889164,-0.535412475860895,0.177473530464306,0.645643562575238) // Noveno biquad
-	) * 3]
+	)]
 }.play;
 )
 };
