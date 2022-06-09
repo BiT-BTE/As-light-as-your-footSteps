@@ -24,9 +24,8 @@ s.options.belaMaxScopeChannels = 8;
 
 s.waitForBoot {
 	// Your code goes here.
-
-
-flatFilter = {
+	(
+		{
 // this was de variable for the volume, not in use for now
 var volum = 0.5;
 // those are the variables for the 2 mic channels
@@ -74,10 +73,8 @@ var micros2 = SoundIn.ar([1]);
 			), 1,-0.650250100924374,0.556478719984411,0.486977719470636,-0.165659884381527,0.748908333544837) // Octavo biquad
 		), 1,0.829269440440680,0.273963711889164,-0.535412475860895,0.177473530464306,0.645643562575238) // Noveno biquad
 	)]
-};
-
-	flatFilter.play;
-
+}.play;
+);
 };
 
 ServerQuit.add({ 0.exit }); // quit if the button is pressed
