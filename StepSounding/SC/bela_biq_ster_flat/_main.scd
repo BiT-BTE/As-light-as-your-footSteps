@@ -18,8 +18,8 @@ s.options.numDigitalChannels = 0;
 s.options.maxLogins = 4;
 s.options.bindAddress = "0.0.0.0"; // allow anyone on the network connect to this server
 
-s.options.pgaGainLeft = 0;
-s.options.pgaGainRight = 0;
+s.options.pgaGainLeft = 10;
+s.options.pgaGainRight = 10;
 s.options.headphoneLevel = 0; // sets the headphone level to -8 dB
 s.options.speakerMuted = 1;
 
