@@ -41,36 +41,18 @@ s.waitForBoot {
 
 	~contador = 0;
 
-	SynthDef('buttonControl', {arg inPin, outPin;
+	SynthDef('buttonControl', {arg inPin, outPin, contador;
 		// read the value at the pin
 		var button = DigitalIn.ar(inPin);
 		//if([true, false],{"true".postln;}, {"false".postln;})
 
 		// toggle an LED on outPin
 		DigitalOut.ar(outPin, button.not);
-		"Boton activado".postln;
-	}).add;
+		//"Boton activado".postln;
 
-	/*
-	SynthDef('colorFlow', {arg color;
+		~contador += contador;
 
-		if(color == "orange", {
-			DigitalOut.ar(0, 1);
-			DigitalOut.ar(1, 1);
-			DigitalOut.ar(2, 0);
-		});
-		if(color == "violet", {
-			DigitalOut.ar(0, 1);
-			DigitalOut.ar(1, 0);
-			DigitalOut.ar(2, 1);
-		});
-		if(color == "cyan", {
-			DigitalOut.ar(0, 0);
-			DigitalOut.ar(1, 1);
-			DigitalOut.ar(2, 1);
-		});
 	}).add;
-	*/
 
 	SynthDef('ledFade', {
 		//var rate = AnalogIn.ar(0).exprange(0.3, 20);
@@ -80,6 +62,15 @@ s.waitForBoot {
 		rate.poll(1); amp.poll(1);
 		AnalogOut.ar(0, SinOsc.ar(rate).range(0.0, amp)); // send to Analog Output 0
 	}).add;
+
+	SynthDef('record', {arg buf;
+		var in = SoundIn.ar(0);
+		var button = DigitalIn.ar(6);
+		button.poll(0.5);
+		RecordBuf.ar(in, buf, run: button, trigger: button);
+	}).add;
+
+
 
 {
 var volum = 0.5;
@@ -135,26 +126,32 @@ var micros2 = SoundIn.ar([1]);
 			), 1.0, 0.82926944, 0.273963712, -0.721255253, -0.108027108, 0.869747778) // Décimo Biquad
 		), 1.0, 1.118500234, 0.167965541, -0.686630006 , 0.283004006, 0.613884544) // Onceavo biquad
 	)]
+
+
+
 }.play;
 
 
-	a = Synth('buttonControl', ['inPin', 6, 'outPin', 0]);
+	a = Synth('buttonControl', ['inPin', 6, 'outPin', 0, 1]);
 	//b = Synth('buttonControl', ['inPin', 6, 'outPin', 1, 1]);
 	//c = Synth('buttonControl', ['inPin', 6, 'outPin', 2, 1]);
 
 	d = Synth('ledFade'); // means the bela is alive
 
-	//if(DigitalIn.ar(6) == 1,{ "boton Apretado".postln;});
-
-
-{
-	var z = 3.rand;
-		switch (z.postln,
-			0, { "Flat Filter Activated".postln; DigitalOut.ar(0, SinOsc.ar(0.9).range(0.0, 0.5));},	// blue
-			1, { "Low Filter Activated".postln; DigitalOut.ar(1, SinOsc.ar(0.9).range(0.0, 0.5));},		// Green
-			2, { "High Filter Activated".postln; DigitalOut.ar(2, SinOsc.ar(0.9).range(0.0, 0.5));} 	// red
+	(
+		var x, z;
+		z = [0, 1, 1.1, 1.3, 1.5, 2];
+		switch (z[3].postln,
+			1,   { \no },
+			1.1, { \wrong },
+			1.3, { \wrong },
+			1.5, { \wrong },
+			2,   { \wrong },
+			0,   { \true }
 		).postln;
-}.play;
+	)
+
+	r = Synth('record', ['buf', b]);
 
 	s.sync;
 
