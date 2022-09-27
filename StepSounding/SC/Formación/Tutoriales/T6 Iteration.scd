@@ -53,7 +53,7 @@ SynthDef.new(\iter, {
 		);
 		sum = sum + temp;
 	};
-	sum = sum * 0.05;
+	sum = sum * 0.05* env;
 	Out.ar(0, sum);
 }).add;
 )
@@ -71,6 +71,51 @@ Synth.new(\iter, [\freq, 68.midicps]);
 Synth.new(\iter, [\freq, 70.midicps]);
 Synth.new(\iter, [\freq, 72.midicps]);
 
+
+(
+[54, 60, 64, 68].do{
+	arg midinote;
+	Synth.new(\iter, [\freq, midinote.midicps]);
+}
+)
+
+(
+SynthDef.new(\iter2, {
+	arg freq = 200, dev = 1.02;
+	var temp, sum;
+	sum = 0;
+	10.do{
+		arg count;
+		temp = SinOsc.ar(freq *
+			(count + 1) *
+			LFNoise1.ar({Rand(0.05, 0.2)}!2).range(dev.reciprocal, dev)
+		);
+		temp = temp * LFNoise1.kr({Rand(0.5, 8)}!2).exprange(0.01, 1);
+		sum = sum + temp;
+	};
+	sum = sum * 0.05;
+	Out.ar(0, sum);
+
+}).add;
+)
+
+x = Synth.new(\iter2);
+
+x.set(\freq, 50);
+x.set(\dev, 1.09);
+
+// un poco raro esto
+(
+var i = 10;
+var fre = 200;
+300.do{
+	fre = fre + i;
+	x.set(\freq, fre);
+
+};
+)
+
+x.free;
 
 k.free;
 s.freeAll;
