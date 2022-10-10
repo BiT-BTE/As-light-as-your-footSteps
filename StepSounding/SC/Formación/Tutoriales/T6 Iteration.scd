@@ -84,7 +84,7 @@ SynthDef.new(\iter2, {
 	arg freq = 200, dev = 1.02;
 	var temp, sum;
 	sum = 0;
-	10.do{
+	30.do{
 		arg count;
 		temp = SinOsc.ar(freq *
 			(count + 1) *
@@ -102,7 +102,7 @@ SynthDef.new(\iter2, {
 x = Synth.new(\iter2);
 
 x.set(\freq, 50);
-x.set(\dev, 1.09);
+x.set(\dev, 1.05);
 
 // un poco raro esto
 (
