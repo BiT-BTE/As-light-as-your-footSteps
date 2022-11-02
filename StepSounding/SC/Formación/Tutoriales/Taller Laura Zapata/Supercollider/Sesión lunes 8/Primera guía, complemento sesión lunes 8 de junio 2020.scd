@@ -200,8 +200,8 @@ Saw.ar(frecuencia, mul, add)
 
 Ejemplos:
 
-{Saw.ar(150,0,0.5)!2}.play
-{Saw.ar(150,0,0.5)!2}.scope
+{Saw.ar(150,0.6,0.5)!2}.play
+{Saw.ar(150,0.3,0.5)!2}.scope
 
 
 
@@ -212,7 +212,7 @@ Ejercicio:
 Realiza tus primeros osciladores.
 
 
-{SinOsc.ar(___,0,0.5)*SinOsc.kr(___,0,0.5,0.5)}.scope
+{SinOsc.ar(440,0,0.5)-SinOsc.ar(80,0,0.5,0.5)}.scope
 
 
 SynthDef(\sine, {Out.ar(0,SinOsc.ar(Rand(440,880),0,0.1))}).add;

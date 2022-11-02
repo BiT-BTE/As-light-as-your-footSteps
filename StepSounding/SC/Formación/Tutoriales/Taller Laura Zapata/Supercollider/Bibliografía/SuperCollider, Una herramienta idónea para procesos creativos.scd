@@ -60,7 +60,11 @@ Una diferencia, es que éstas pueden definirse en cualquier parte del código y 
 ~variable1 = 5;
 ~variable2 = 10;
 ~resultado= ~variable1 + ~variable2;
-~resultado.postln;
+~resu
+
+
+
+ltado.postln;
 
 Bloque de código
 
@@ -124,20 +128,32 @@ Tamaño de una lista
 ////////Funciones
 
 Utilizamos funciones para guardar una serie de pasos u operaciones, que los reutilizaremos de forma seguida. Podemos identificar una función por el uso de corchetes. Tenemos tres partes de una función que son muy importantes. La primera, es el nombre. La segunda, son los argumentos de entrada y la tercera, es el resultado de la misma.
-
-
-~suma = {arg x,y;
-          //vacía
 }
 
 //definir una función
 
+(
+
+~suma = {arg x,y;
+          //vacía
 
 ~suma = {arg x,y;
 	var resultado; //variable interna
 	resultado = x+y;
 }
+)
+(
+{SinOsc.ar(MouseButton.kr(80,432),0,MouseX.kr(0.1,0.8),0)!2}.scope;
 
+(
+~Ecuipo=
+SynthDef.neu(\Ecuipo,{arg freq=440, mul=0.5;
+	var sin;
+	sin=SinOsc.ar(freq,mul);
+	Out.ar(1,sin);
+}).play;
+)
+	Sen(f)*1
 
 //llamar a la función
 
