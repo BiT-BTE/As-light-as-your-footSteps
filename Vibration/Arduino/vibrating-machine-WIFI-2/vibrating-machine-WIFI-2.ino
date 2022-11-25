@@ -15,7 +15,7 @@
 
 #include <WiFi.h>
 #include <WiFiClient.h>
-#include <WiFiAP.h>
+//#include <WiFiAP.h>
 
 // PINS FOR THE MOTRS
 
@@ -137,6 +137,8 @@ void loop()
             client.print("Click <a href=\"/L\">OFF</a> to turn OFF the Vibrators.<br>");
             client.print("Click <a href=\"/MM\">+</a> to this increase the Vibrations.<br>");
             client.print("Click <a href=\"/MN\">-</a> to this decrease the Vibrations.<br>");
+            client.print("Click <a href=\"/MP\">+</a> to this increase the Vibrations.<br>");
+            client.print("Click <a href=\"/NP\">-</a> to this decrease the Vibrations.<br>");
             client.print("Click <a href=\"/T\">Triangel</a> to turn a Triangular Vibration.<br>");
             client.print("Click <a href=\"/S\">Sin</a> to turn Sin Vibration.<br>");
             client.print("Click <a href=\"/ST\">Saw Tooth</a> to turn a Saw Tooth Vibration.<br>");
