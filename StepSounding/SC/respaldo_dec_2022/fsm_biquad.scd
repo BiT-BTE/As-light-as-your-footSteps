@@ -76,6 +76,57 @@ s.waitForBoot {
 
 	}.play;
 
+	OSCdef('listenToButtons', {
+			arg msg;
+			// Buttons
+			~trigger1 = msg[0].asInteger;
+			~trigger1.postln;
+
+		//counter
+
+			if(msg[3] == 1,{ ~button1 = a.next;  });
+
+			//Clocker to check result and restart in 1.5 SuperCollider
+
+			(
+			t = Task({
+
+				2.wait;
+				if(msg[3] == 1,{
+				~resultbutton1 = ~button1;
+				["Scene: " ++ ~resultbutton1].postln;
+				});
+				if(msg[4] == 1,{
+				~resultbutton2 = ~button2;
+				["Synth: " ++ ~resultbutton2].postln;
+				});
+				if(msg[5] == 1,{
+				~resultbutton3 = ~button3;
+				["Parameters: " ++ ~resultbutton3].postln
+				});
+
+			    2.yield;
+				    a.reset;
+				    b.reset;
+				    c.reset;
+			    });
+			t.start;
+			);
+
+
+		~resultbutton1.postln;
+
+		//working
+		// q = Synth(\shh);
+    	// 	q.set(\t_trig, ~trigger1);
+
+ 				if(~resultbutton1 == 1, {
+				q = Synth(\shh);
+ 				q.set(\t_trig, ~trigger1)
+			    });
+
+		}, '/buttonMonitor');
+
 SynthDef(\FSM, {arg sliderPin, buttonPin, outLed1, outLed2, outLed3, state=0;
 	var volum = AnalogIn.ar(0).exprange(1, 6);
 	//var volum = 0.5;

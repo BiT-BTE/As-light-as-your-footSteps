@@ -23,34 +23,11 @@ s.options.postln;
 s.waitForBoot({
 	//synths examples
 
-	SynthDef(\mic, {| inChan = 0,inPin, outPin|
-		var in, outLed, button;
-		in = SoundIn.ar(inChan);
-		in.poll;
-
-		button = DigitalIn.ar(inPin);
-		outLed = DigitalOut.ar(outPin, button); //Light  Digital pin 1 - Button
-
-	    Out.ar(0,in!2);
-
-	}).send(s);
-
-	SynthDef (\shh, {
-			arg out=~outBack, t_trig=0;
-			var sound, env;
-			sound = Mix(LFPulse.ar(110*[1,5/2],0.0,0.5,0.2));
-			env = EnvGen.ar(Env.perc(0.02,4), t_trig);
-			sound = Pan2.ar(sound * env,0.0);
-			Out.ar(out, sound);
-		},[\tr]).send(s);
-
   s.sync;
 
 
 	~buttonMonitor = {
-			 var d1 = DigitalIn.kr(7); // Digital pin 1 - Button
-			 var d2 = DigitalIn.kr(2); // Digital pin 2 - Button
-			 var d3 = DigitalIn.kr(3); // Digital pin 3 - Button
+			 var d1 = DigitalIn.kr(); // Digital pin 1 - Button
 
 
 	//Analog	(in the future)
