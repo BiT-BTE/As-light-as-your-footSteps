@@ -49,12 +49,22 @@ s.waitForBoot {
 		SendReply.kr(Changed.kr(d1), '/buttonMonitor', [77, 99, d1, rrand(0,2)]);
 		}.play;
 
+	c = {
+		arg red, green, blue;
+		var redS = red;
+		var greenS = green;
+		var blueS = blue;
+		DigitalOut.ar(2, redS.not);
+		DigitalOut.ar(4, greenS.not);
+		DigitalOut.ar(5, greenS.not);
+	}.play;
+
 		(
 r = Routine({
 	inf.do{
-	(m.set(\amp, 1); l.set(\amp, 0); k.set(\amp, 0)).yield;
-	(m.set(\amp, 0); l.set (\amp, 1); k.set(\amp, 0)).yield;
-	(m.set(\amp, 0); l.set(\amp, 0); k.set (\amp, 1)).yield;
+	(m.set(\amp, 1); l.set(\amp, 0); k.set(\amp, 0); c.set(\red, 1); c.set(\green, 0); c.set(\blue, 0)).yield;
+	(m.set(\amp, 0); l.set (\amp, 1); k.set(\amp, 0); c.set(\red, 0); c.set(\green, 1); c.set(\blue, 0)).yield;
+	(m.set(\amp, 0); l.set(\amp, 0); k.set (\amp, 1);c.set(\red, 1); c.set(\green, 0); c.set(\blue, 1)).yield;
 
 	}
 })
@@ -70,7 +80,7 @@ r = Routine({
 			// Buttons
 			// el valor del mensaje comienza don el 3
 			~trigger1 = msg[5].asInteger;
-			~trigger1.postln;
+		//	~trigger1.postln;
 			//contador = contador + aumento;
 		//	postln(contador);
 			//if(msg[5] == 1,{ k.set(\amp, rrand(0.0, 0.99).postln); m.set(\amp, rrand(0.0, 0.99).postln); l.set(\amp, rrand(0.0, 0.99).postln)});
@@ -90,6 +100,7 @@ r = Routine({
 		AnalogOut.ar(0, SinOsc.ar(rate).range(0.0, amp)); // send to Analog Output 0
 	}).add;
 
+/*
 SynthDef(\FSM, {arg buttonPin, outLed1, outLed2, outLed3, state=0;
 	//var volum = AnalogIn.ar(0).exprange(1, 6);
 	//var volum = 0.5;
@@ -111,7 +122,7 @@ SynthDef(\FSM, {arg buttonPin, outLed1, outLed2, outLed3, state=0;
 	rate.poll(1);
 	amp.poll(1);
 	AnalogOut.ar(0, SinOsc.ar(rate).range(0.0, amp)); // send to Analog Output 0
-	/*
+
 	filter =
 		[
 			DigitalOut.ar(outLed1, button.not),
@@ -119,7 +130,7 @@ SynthDef(\FSM, {arg buttonPin, outLed1, outLed2, outLed3, state=0;
 			DigitalOut.ar(outLed3, button.not)
 		];
 
-		*/
+
 	// toggle an LED on outPin
 //	DigitalOut.ar(outLed1, button.not);
 //	DigitalOut.ar(outLed2, button.not);
@@ -129,19 +140,22 @@ SynthDef(\FSM, {arg buttonPin, outLed1, outLed2, outLed3, state=0;
 	Select.ar(state, filter);
 
 }).add;
-
+*/
 
 // synth that implements the sound filter that highlights the low frequencies
 SynthDef.new(\biquadAltoBajo,
 {
-arg amp, luz;
-var ledOn = luz;
+arg amp, red, green, blue;
+var redS = red;
+var greenS = green;
+var blueS = blue;
 var volum = amp;
+
+
 //var volum = AnalogIn.ar(0).exprange(1, 6);
 //var volum = 0.5;
 var micros = SoundIn.ar([0]);
 var micros2 = SoundIn.ar([1]);
-//DigitalOut.ar(2, ledOn.not)
 var sig1, sig2;
 
 sig1 = (SOS.ar(

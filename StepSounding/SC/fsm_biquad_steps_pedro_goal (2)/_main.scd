@@ -11,7 +11,7 @@ The following will be the order of the pins:
 
 DigitalIn 0 for the button
 AnalogOutP 0 for saying that the Bela is ready and linked with the slider
-DigitalIn 2 for red color
+DigitalIn 2 for red color 
 DigitalIn 3 for green color
 DigitalIn 4 for blue color
 AnalogIn 0 for the slider
@@ -39,30 +39,30 @@ s.options.belaMaxScopeChannels = 8;
 
 s.waitForBoot {
 	// Your code goes here.
-
+	
 	// counter for the switch cas
-
+	
 	~crlButton = 0;
 
 	~buttonMonitor = {
 		var d1 = DigitalIn.kr(0); // Digital pin 0 - Butto
 		SendReply.kr(Changed.kr(d1), '/buttonMonitor', [77, 99, d1, rrand(0,2)]);
 		}.play;
-
+		
 		(
 r = Routine({
 	inf.do{
 	(m.set(\amp, 1); l.set(\amp, 0); k.set(\amp, 0)).yield;
 	(m.set(\amp, 0); l.set (\amp, 1); k.set(\amp, 0)).yield;
 	(m.set(\amp, 0); l.set(\amp, 0); k.set (\amp, 1)).yield;
-
+		
 	}
 })
 );
 
 
 //if( msg[1] ==1, {r.next})
-
+	
 	OSCdef('listenToButtons', {
 			arg msg;
 			var contador;
@@ -81,22 +81,13 @@ r = Routine({
 
 		}, '/buttonMonitor');
 
-	SynthDef(\ledFade, {
-		//var rate = AnalogIn.ar(0).exprange(0.3, 20);
-		//var amp = AnalogIn.ar(0); // returns a value from 0-1
-		var rate = 0.1; //0.3 a 20
-		var amp = 0.9; // returns a value from 0-1
-		rate.poll(1); amp.poll(1);
-		AnalogOut.ar(0, SinOsc.ar(rate).range(0.0, amp)); // send to Analog Output 0
-	}).add;
-
 SynthDef(\FSM, {arg buttonPin, outLed1, outLed2, outLed3, state=0;
 	//var volum = AnalogIn.ar(0).exprange(1, 6);
 	//var volum = 0.5;
 	var micros = SoundIn.ar([0]);
 	var micros2 = SoundIn.ar([1]);
 	var sig1, sig2;
-
+	
 	// read the value at the pin
 	var button = DigitalIn.ar(buttonPin);
 	//if([true, false],{"true".postln;}, {"false".postln;})
@@ -105,20 +96,20 @@ SynthDef(\FSM, {arg buttonPin, outLed1, outLed2, outLed3, state=0;
 	var amp = 1.0; // returns a value from 0-1
 	var rate = 0.1; //0.3 a 20
 	var filter;
-
+	
 	//var amp = 1.0; // returns a value from 0-1
 	//button.postln;
-	rate.poll(1);
+	rate.poll(1); 
 	amp.poll(1);
-	AnalogOut.ar(0, SinOsc.ar(rate).range(0.0, amp)); // send to Analog Output 0
+	AnalogOut.ar(0, SinOsc.ar(rate).range(0.0, amp)); // send to Analog Output 0	
 	/*
-	filter =
+	filter = 
 		[
 			DigitalOut.ar(outLed1, button.not),
 			DigitalOut.ar(outLed2, button.not),
 			DigitalOut.ar(outLed3, button.not)
 		];
-
+		
 		*/
 	// toggle an LED on outPin
 //	DigitalOut.ar(outLed1, button.not);
@@ -132,10 +123,10 @@ SynthDef(\FSM, {arg buttonPin, outLed1, outLed2, outLed3, state=0;
 
 
 // synth that implements the sound filter that highlights the low frequencies
-SynthDef.new(\biquadAltoBajo,
+SynthDef.new(\biquadAltoBajo, 
 {
 arg amp, luz;
-var ledOn = luz;
+var ledOn = luz;	
 var volum = amp;
 //var volum = AnalogIn.ar(0).exprange(1, 6);
 //var volum = 0.5;
@@ -197,7 +188,7 @@ sig2 = (SOS.ar(
 }).add;
 
 // synth that implements the sound filter that highlights the High frequencies
-SynthDef.new(\biquadBajoAlto,
+SynthDef.new(\biquadBajoAlto, 
 {
 	arg amp;
 var volum = amp;
@@ -261,7 +252,7 @@ sig2 = (SOS.ar(
 
 
 // synth that implements the sound filter that highlights equally all frequencies
-SynthDef.new(\biquadFlat,
+SynthDef.new(\biquadFlat, 
 {
 	arg amp;
 var volum = amp;
@@ -324,23 +315,23 @@ sig2 = (SOS.ar(
 }).add;
 
 
-	// Synths are instantiated here
+	// Synths are instantiated here 
 	//a = Synth.new(\buttonControl, [\inPin, 0, \outPin, 2]);
 	//b = Synth('buttonControl', ['inPin', 0, 'outPin', 3]);
 	//c = Synth('buttonControl', ['inPin', 0, 'outPin', 4]);
-
+	
 //	c = Synth(\FSM, [\buttonPin, 0, \outLed1, 2, \outLed2, 4, \outLed3, 5]);
 //	c.set(\state, 1);
-
-	d = Synth.new(\ledFade); // means the bela is alive
-
-	// Synths with the filters are instantiated here, the idea would be to have a single Synth (maybe)
+	
+//	d = Synth.new(\ledFade); // means the bela is alive
+	
+	// Synths with the filters are instantiated here, the idea would be to have a single Synth (maybe) 
 	// that has all the filters inside and depending on the button it plays one of each of the three filters
 
 	k = Synth.new(\biquadAltoBajo);
 	l = Synth.new(\biquadBajoAlto);
 	m = Synth.new(\biquadFlat);
-
+	
 	s.sync;
 
 };
