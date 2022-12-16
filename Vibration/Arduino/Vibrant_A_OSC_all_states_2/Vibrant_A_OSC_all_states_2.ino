@@ -19,17 +19,17 @@ int update_rate = 16;
 char ssid[] = SECRET_SSID;        // your network SSID (name)
 char pass[] = SECRET_PASS;    // your network password (use for WPA, or use as key for WEP)
 
-IPAddress local_IP(192, 168, 205, 221);
+IPAddress local_IP(192, 168, 1, 110);
 IPAddress gateway(192, 168, 1, 1);
 IPAddress subnet(255, 255, 255, 0);
 IPAddress primaryDNS(0, 0, 0, 0); //optional
 IPAddress secondaryDNS(0, 0, 0, 0); //optional
 
-unsigned int localPort = 8890; // local port to listen for OSC packets
+unsigned int localPort = 8888; // local port to listen for OSC packets
 
 ///// send OSC to MAX
 //destination IP
-IPAddress outIp(192, 168, 205, 62);
+IPAddress outIp(192, 168, 1, 100);
 const unsigned int outPort = 8000;
 
 const int pot = A2;
