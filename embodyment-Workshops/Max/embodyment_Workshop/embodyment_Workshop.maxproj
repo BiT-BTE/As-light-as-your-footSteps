@@ -2,7 +2,7 @@
 	"name" : "embodyment_Workshop",
 	"version" : 1,
 	"creationdate" : 3754031950,
-	"modificationdate" : 3754033262,
+	"modificationdate" : 3754290193,
 	"viewrect" : [ 50.0, 144.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -17,6 +17,11 @@
 			}
 ,
 			"lambda_Synth.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"Vibrant_embodyment.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}
@@ -127,6 +132,10 @@
 		}
 ,
 		"data" : 		{
+
+		}
+,
+		"externals" : 		{
 
 		}
 
