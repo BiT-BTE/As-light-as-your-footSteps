@@ -18,8 +18,8 @@ int update_rate = 16;
 ///////please enter your sensitive data in the Secret tab/arduino_secrets.h and don't publish it in any place
 ////char ssid[] = SECRET_SSID;        // your network SSID (name)
 //char pass[] = SECRET_PASS;    // your network password (use for WPA, or use as key for WEP)
-const char* ssid     = "joakinator1";
-const char* pass = "joakinator1";
+const char* ssid     = "vibrant";
+const char* pass = "vibrant1";
 
 //IPAddress local_IP(192, 168, 1, 120);
 //IPAddress gateway(192, 168, 1, 1);
