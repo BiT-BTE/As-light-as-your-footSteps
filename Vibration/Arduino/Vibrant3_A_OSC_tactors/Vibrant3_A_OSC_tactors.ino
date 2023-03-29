@@ -76,7 +76,7 @@ int intensity3 = 0;
 #define LEDC_TIMER_13_BIT  13
 
 // use 5000 Hz as a LEDC base frequency
-#define LEDC_BASE_FREQ     8000
+#define LEDC_BASE_FREQ     1000
 
 int brightness = 0;    // how bright the LED is
 
