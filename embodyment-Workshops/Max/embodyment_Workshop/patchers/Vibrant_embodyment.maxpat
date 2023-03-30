@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 389.0, 66.0, 1398.0, 657.0 ],
+		"rect" : [ 54.0, 187.0, 1398.0, 657.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -1597,7 +1597,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1942.0, 1515.278319999999894, 165.0, 22.0 ],
-					"text" : "udpsend 192.168.1.104 8888"
+					"text" : "udpsend 192.168.1.101 8888"
 				}
 
 			}
@@ -5421,13 +5421,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-9",
-									"linecount" : 3,
+									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 105.0, 257.0, 33.5, 35.0 ],
-									"text" : "77.678776"
+									"text" : "bang"
 								}
 
 							}
@@ -13125,13 +13125,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-9",
-									"linecount" : 3,
+									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 105.0, 257.0, 33.5, 35.0 ],
-									"text" : "46.049073"
+									"text" : "bang"
 								}
 
 							}
@@ -16269,6 +16269,7 @@
 									"bufferchooser_shape" : "buttons",
 									"bufferchooser_size" : 15,
 									"bufferchooser_visible" : 0,
+									"continousediting" : 0,
 									"cursor_circleedgecolor" : [ 1.0, 0.0, 0.0, 1.0 ],
 									"cursor_circlefillcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
 									"cursor_circlefilled" : 1,
@@ -27712,15 +27713,15 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "intensity.maxpat",
-				"bootpath" : "~/Documents/img-mov/git/i_mBODY-Sonification/embodyment-Workshops/Max/PA-Suxin/patchers",
-				"patcherrelativepath" : "../../PA-Suxin/patchers",
+				"bootpath" : "~/Documents/Max 8/Library/motion-analysis-max/max-bitalino-riot2",
+				"patcherrelativepath" : "../../../../../../../Max 8/Library/motion-analysis-max/max-bitalino-riot2",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "kick.maxpat",
-				"bootpath" : "~/Documents/img-mov/git/i_mBODY-Sonification/embodyment-Workshops/Max/PA-Suxin/patchers",
-				"patcherrelativepath" : "../../PA-Suxin/patchers",
+				"bootpath" : "~/Documents/Max 8/Library/motion-analysis-max/max-bitalino-riot2",
+				"patcherrelativepath" : "../../../../../../../Max 8/Library/motion-analysis-max/max-bitalino-riot2",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -27742,8 +27743,8 @@
 			}
 , 			{
 				"name" : "riotbitalino.maxpat",
-				"bootpath" : "~/Documents/img-mov/git/i_mBODY-Sonification/embodyment-Workshops/Max/PA-Suxin/patchers",
-				"patcherrelativepath" : "../../PA-Suxin/patchers",
+				"bootpath" : "~/Documents/Max 8/Library/motion-analysis-max/max-bitalino-riot2",
+				"patcherrelativepath" : "../../../../../../../Max 8/Library/motion-analysis-max/max-bitalino-riot2",
 				"type" : "JSON",
 				"implicit" : 1
 			}

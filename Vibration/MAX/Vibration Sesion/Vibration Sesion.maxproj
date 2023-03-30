@@ -2,7 +2,7 @@
 	"name" : "Vibration Sesion",
 	"version" : 1,
 	"creationdate" : 3762338473,
-	"modificationdate" : 3762975911,
+	"modificationdate" : 3763014415,
 	"viewrect" : [ 25.0, 119.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -17,6 +17,16 @@
 			}
 ,
 			"embodyment_Workshop.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1,
+				"singleton" : 				{
+					"bootpath" : "~/Documents/img-mov/git/i_mBODY-Sonification/embodyment-Workshops/Max/embodyment_Workshop/patchers",
+					"projectrelativepath" : "../../../embodyment-Workshops/Max/embodyment_Workshop/patchers"
+				}
+
+			}
+,
+			"Vibrant_embodyment.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1,
 				"singleton" : 				{
@@ -281,6 +291,10 @@
 		}
 ,
 		"data" : 		{
+
+		}
+,
+		"externals" : 		{
 
 		}
 

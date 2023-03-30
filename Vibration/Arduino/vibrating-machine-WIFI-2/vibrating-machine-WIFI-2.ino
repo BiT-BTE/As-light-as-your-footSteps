@@ -45,7 +45,7 @@ WiFiServer server(80);
 #define LEDC_TIMER_13_BIT  13
 
 // use 5000 Hz as a LEDC base frequency
-#define LEDC_BASE_FREQ     1000
+#define LEDC_BASE_FREQ     5
 
 // fade LED PIN (replace with LED_BUILTIN constant for built-in LED)
 #define LED_PIN            3
