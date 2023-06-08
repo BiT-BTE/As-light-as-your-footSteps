@@ -2,7 +2,7 @@
 	"name" : "embodyment_Workshop",
 	"version" : 1,
 	"creationdate" : 3754031950,
-	"modificationdate" : 3754290193,
+	"modificationdate" : 3768571507,
 	"viewrect" : [ 50.0, 144.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -22,6 +22,31 @@
 			}
 ,
 			"Vibrant_embodyment.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"ElectroNahual-Karma-Looper.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1,
+				"singleton" : 				{
+					"bootpath" : "~/Documents/img-mov/git/Cyborg-Interface/Performances/ElectroNahual/Performative Tools/Music/MAX/pabloVoz/pablo_voz/patchers",
+					"projectrelativepath" : "../../../../Cyborg-Interface/Performances/ElectroNahual/Performative Tools/Music/MAX/pabloVoz/pablo_voz/patchers"
+				}
+
+			}
+,
+			"ElectroNahual-Samples.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1,
+				"singleton" : 				{
+					"bootpath" : "~/Documents/img-mov/git/Cyborg-Interface/Performances/ElectroNahual/Performative Tools/Music/MAX/pabloVoz/pablo_voz/patchers",
+					"projectrelativepath" : "../../../../Cyborg-Interface/Performances/ElectroNahual/Performative Tools/Music/MAX/pabloVoz/pablo_voz/patchers"
+				}
+
+			}
+,
+			"Joakinator-NIME-23.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}
@@ -136,6 +161,10 @@
 		}
 ,
 		"externals" : 		{
+
+		}
+,
+		"other" : 		{
 
 		}
 
