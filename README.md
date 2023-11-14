@@ -1,2 +1,1 @@
-# BiT-Cyborg
- My personal repository for BODYinTRANSIT
+# BiT-As light as your footSteps repository.
